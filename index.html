@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Budgety Application</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav">
+                <img src="images/logo.svg" alt="Budgety Application"class="logo">
+                <a onclick="openForm()"><img src="images/add.svg" alt="Add New Entry" class="add-btn"></a>
+            </div>    
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <div class="overview">
+                <div class="cards total_budget">
+                    <span class="card_title">+ 1,000.00</span>
+                    <span class="card_sub-title">Total Budget</span>
+                    <img src="images/growth.svg" alt="Total Budget" class="icon">
+                </div>
+                <div class="cards total_income">
+                    <span class="card_title">+ 2,000.00</span>
+                    <span class="card_sub-title">Total Income</span>
+                    <img src="images/income.svg" alt="Total Income" class="icon">
+                </div>
+                <div class="cards total_expense">
+                    <span class="card_title"> - 1,000.00</span>
+                    <span class="card_sub-title">Total Expense</span>
+                    <img src="images/expense.svg" alt="Total Expense" class="icon">
+                </div>
+                <div class="cards total_entries">
+                    <span class="card_title"> 02</span>
+                    <span class="card_sub-title">Total Entries</span>
+                    <img src="images/entry.svg" alt="Total Entry" class="icon">
+                </div>
+            </div>
+        </section>
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+                <span class="form-title">Add New Entry</span>
+                <div class="add_type">
+                    <label for="customRadio" class="radio">
+                        <input type="radio" name="radio" id="customRadio" class="radio_input">
+                        <span class="checkmark"></span>Income</label>
+                    <label for="customRadio2" class="radio">
+                        <input type="radio" name="radio" id="customRadio2" class="radio_input">
+                        <span class="checkmark"></span>
+                        Expense</label>
+                </div>
+                <div class="add_description">
+                    <div class="form-icon">D</div>
+                    <input type="text" name="description" class="text_input" placeholder="Add Description">
+                </div>
+                <div class="add_category">
+                    <span class="form-icon">C</span>
+                    <input type="text" name="category" class="text_input" placeholder="Add Category">
+                </div>
+                <div class="add_amount">
+                    <span class="form-icon">$</span>
+                    <input type="number" name="amount" class="num_input" placeholder="Add Amount">
+                </div>
+                <div class="buttons">
+                    <button class="submit btn">Save</button>
+                    <button class="close btn" onclick="closeForm()">Close</button>
+                </div>
+            </form>
+        </div>
+        <section class="container">
+            <div class="list-section">
+                <div class="list-title border">
+                    Entry List
+                </div>
+               
+                <div class="list-container">
+                    <div class="list list-0">
+                        <div class="list-description">Logo Design</div>
+                        <div class="list-value"> + 2,000.00</div>
+                        <a href="#" class="list-btn delete">Delete</a>
+                        <div class="list-tags">
+                            <span class="tag">Income</span>
+                            <span class="tag">Freelancing</span>
+                        </div>
+                        <div class="list-time">8:29 am</div>
+                        <a href="#" class="list-btn modify">Modify</a>
+                    </div>
+                    <div class="list list-1">
+                        <div class="list-description">Rent</div>
+                        <div class="list-value"> - 500.00</div>
+                        <a href="#" class="list-btn delete">Delete</a>
+                        <div class="list-tags">
+                            <span class="tag">Expense</span>
+                            <span class="tag">Recurring</span>
+                        </div>
+                        <div class="list-time">8:29 am</div>
+                        <a href="#" class="list-btn modify">Modify</a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+<script>
+    var form = document.getElementById("myForm");
+    var closeBtn = document.getElementsByClassName("close");
+    function openForm() {
+        form.style.display = "block";
+    }
+
+    function closeForm () {
+        form.style.display = "none";
+    }
+</script>
+</body>
+</html>
